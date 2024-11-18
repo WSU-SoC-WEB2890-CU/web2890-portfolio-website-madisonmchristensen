@@ -35,7 +35,8 @@ nav li:last-child {
 }
 
 .navbar-nav{
-    margin-left: auto; //need to center the nav
+    margin-left: auto;
+    margin-right: auto;
     padding: 5px;
 }
 
@@ -43,9 +44,7 @@ nav li:last-child {
     padding: 5px;
 }
 
-.navbar-nav:last-child{
-    margin-right: 0 !important;
-}
+
 
 .navbar > .container-fluid > .custom-toggler-icon{
     background-color: white;
@@ -66,7 +65,7 @@ nav li:last-child {
 }
 
 .jumbotron > h1{
-    color: black;
+    color: #6A59EC;
 }
 
 .jumbotron > h2{
@@ -95,25 +94,31 @@ nav li:last-child {
 /***** PROJECT CARDS STYLES *****/
 .pCards{
     margin: 20px;
-    justify-content: center; //need to get group of cards centered
-    //margin: 0 auto;
-    //
-    //margin-left: auto;
-    //margin-right: auto;
+}
+
+.pCards > .container > .row{
+    margin: 25px;
 }
 
 .pCards > .container > .row > .col > .card{
-    margin: 10px;
+    margin: 0 auto;
     border-radius: 5px; //not sure why only the top is rounding
     border: 2px solid black;
+    width: 20rem;
 }
 
 .pCards > .container > .row > .col > .card > .card-body{
     background-color: #6A59EC;
 }
 
-.pCards > .container > .row > .col > .card > .card-body > a > p{
+.pCards > .container > .row > .col > .card > .card-body > a{
     color: white !important;
+    text-decoration: none !important;
+    font-size: 1.4em;
+}
+
+.pCards > .container > .row > .col > .card > .card-body > a:hover{
+    color: black !important;
 }
 
 
@@ -149,6 +154,8 @@ footer > .container > .row > .col > ul > li,
 footer > .container > .row > .col > .row > .col > ul > li
 {
     list-style-type: none;
+    padding: 0 !important; //still has indent on left
+    margin: 0 !important;
 }
 
 footer > .container > .row > .col > ul > li:hover,
@@ -163,6 +170,8 @@ footer > .container > .row > .col > .row > .col > ul > li:hover{
     color: #6A59EC;
     width: 70%;
     margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 1.5em;
 }
 
 .aboutme > .card > img, .cstudy > .card > img{
@@ -203,8 +212,12 @@ footer > .container > .row > .col > .row > .col > ul > li:hover{
 
 .projectpage > h4{
     color: #6A59EC;
+    margin-left: 10%;
 }
 
-.projectpage{
-    margin-left: 30px; 
+.projectpage > p, .projectpage > ul > li{
+    font-size: 1.2em;
+    width: 60%;
+    margin-left: 10%;
 }
+
