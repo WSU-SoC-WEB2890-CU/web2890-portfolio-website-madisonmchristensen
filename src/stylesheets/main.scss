@@ -3,6 +3,9 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
 /***** FONT STYLES *****/
+@font-face{ // nor sure why this isn't working
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 /***** NAVIGATION STYLES *****/
 nav{
@@ -79,11 +82,24 @@ nav li:last-child {
     margin-top: 10px;
 }
 
+.projectpage > #title > a{
+    text-align: center;
+    color: #6A59EC !important; 
+    margin-top: 10px;
+}
+
+.projectpage > #title > a:hover{
+    color: black !important;
+}
+
 /***** PROJECT CARDS STYLES *****/
 .pCards{
     margin: 20px;
     justify-content: center; //need to get group of cards centered
     //margin: 0 auto;
+    //
+    //margin-left: auto;
+    //margin-right: auto;
 }
 
 .pCards > .container > .row > .col > .card{
@@ -158,6 +174,7 @@ footer > .container > .row > .col > .row > .col > ul > li:hover{
 .aboutme{
     margin-bottom: 20px;
 }
+
 /***** CONTACT PAGE STYLES *****/
 .contact{
     background-color: rgb(198, 198, 198);
@@ -178,8 +195,10 @@ footer > .container > .row > .col > .row > .col > ul > li:hover{
 /***** PROJECT PAGES *****/
 .projectpage > .pimage{
     width: 60%;
-    margin-top: 30px; //gap not showing between image and nav
-    margin: 0 auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
 }
 
 .projectpage > h4{
