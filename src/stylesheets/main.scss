@@ -2,9 +2,14 @@
 @import "bootstrap/scss/bootstrap.scss";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+
 /***** FONT STYLES *****/
-@font-face{ // nor sure why this isn't working
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
+
+html > body > p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /***** NAVIGATION STYLES *****/
@@ -14,7 +19,7 @@ nav{
 }
 
 nav li{
-    border-right: 2px solid #FFFF;
+    border-right: 2px solid #000000;
 }
 
 nav li:last-child {
@@ -22,12 +27,12 @@ nav li:last-child {
 }
 
 .nav-link{
-    color: black !important; 
+    color: white !important; 
     font-size: 1.75em;
 }
 
 .nav-link:hover{
-    color: white !important;
+    color: rgb(198, 198, 198) !important;
 }
 
 .navbar-brand > img:hover{
@@ -43,7 +48,6 @@ nav li:last-child {
 .navbar-nav > li{
     padding: 5px;
 }
-
 
 
 .navbar > .container-fluid > .custom-toggler-icon{
@@ -64,8 +68,32 @@ nav li:last-child {
     padding: 10px;
 }
 
-.jumbotron > h1{
+.jumbotron > .jumbotext {
+    background-color: rgba(255, 255, 255, 0.30); 
+    backdrop-filter: blur(10px); 
+    border-radius: 2rem;
+    width: 25%;
+    padding-left: 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+@media (max-width: 575.98px) {
+    .jumbotron > .jumbotext{
+        width: 50%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .jumbotron > .jumbotext{
+        width: 50%;
+    }
+}
+
+.jumbotron > .jumbotext > h1{
     color: #6A59EC;
+    text-shadow: 0px 2px 5px #777;
+    //-webkit-text-stroke: .01em black; 
 }
 
 .jumbotron > h2{
@@ -74,11 +102,18 @@ nav li:last-child {
     font-size: 1.8em;
 }
 
+#jumbobtn{
+    text-align: left !important;
+    margin-left: 20px;
+}
+
 /***** TITLE STYLES *****/
 .title, #title{
     text-align: center;
     color: #6A59EC; 
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+
 }
 
 .projectpage > #title > a{
@@ -97,31 +132,33 @@ nav li:last-child {
 }
 
 .pCards > .container > .row{
-    margin: 25px;
+    margin: 0px;
 }
 
-.pCards > .container > .row > .col > .card{
+.pCards > .container > .row > .col > a > .card{
     margin: 0 auto;
-    margin-bottom: 10px;
     border-radius: 5px; //not sure why only the top is rounding
     border: 2px solid black;
     width: 20rem;
 }
 
-.pCards > .container > .row > .col > .card > .card-body{
+.pCards > .container > .row > .col > a > .card > .card-body{
     background-color: #6A59EC;
 }
 
-.pCards > .container > .row > .col > .card > .card-body > a{
+.pCards > .container > .row > .col > a{
     color: white !important;
     text-decoration: none !important;
     font-size: 1.4em;
 }
 
-.pCards > .container > .row > .col > .card > .card-body > a:hover{
-    color: black !important;
+.pCards > .container > .row > .col > a:hover{
+    color: rgb(198, 198, 198) !important;
 }
 
+.pCards > .container > .row > .col > a > .card:hover{
+    box-shadow:  0px 2px 5px #777;
+}
 
 /***** LET'S COLLABORATE STYLES *****/
 .collab > h2{
@@ -154,20 +191,27 @@ footer{
 footer > .container > .row > .col > ul > li,
 footer > .container > .row > .col > .row > .col > ul > li
 {
-    list-style-type: none;
-    padding: 0 !important; //still has indent on left
-    margin: 0 !important;
+    list-style-type: none !important;
 }
 
-footer > .container > .row > .col > ul > li:hover,
-footer > .container > .row > .col > .row > .col > ul > li:hover{
-    color: rgb(198, 198, 198);
+footer > .container > .row > .col > ul > li > a,
+footer > .container > .row > .col > .row > .col > ul > li > a,
+footer > .container > .row > .col > a
+{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+footer > .container > .row > .col > ul > li > a:hover,
+footer > .container > .row > .col > .row > .col > ul > li > a:hover,
+footer > .container > .row > .col > a:hover{
+    color: rgb(198, 198, 198) !important;
 }
 
 /***** ABOUT ME PAGE STYLES *****/
 .aboutme > .card, .cstudy > .card{
     margin: 10px;
-    background-color: rgb(198, 198, 198);
+    background-color: rgb(236, 236, 236);
     color: #6A59EC;
     width: 70%;
     margin: 0 auto;
@@ -176,9 +220,8 @@ footer > .container > .row > .col > .row > .col > ul > li:hover{
 }
 
 .aboutme > .card > img, .cstudy > .card > img{
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 10px;
 }
 
 .aboutme{
@@ -187,7 +230,7 @@ footer > .container > .row > .col > .row > .col > ul > li:hover{
 
 /***** CONTACT PAGE STYLES *****/
 .contact{
-    background-color: rgb(198, 198, 198);
+    background-color: rgb(236, 236, 236);
     margin: 50px;
 }
 
@@ -200,15 +243,36 @@ footer > .container > .row > .col > .row > .col > ul > li:hover{
 .contact > .container > .row > .col > .container > .mb-3 > label{
     color: #6A59EC;
     font-size: 1.2em;
+    text-align: left !important;
 }
 
 /***** PROJECT PAGES *****/
+.projectpage{
+    margin-bottom: 30px;
+}
+
 .projectpage > .pimage{
-    width: 60%;
+    width: 70%;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     border: 2px solid black;
+}
+
+@media (max-width: 575.98px) {
+    .projectpage > .pimage{
+        width: 100%;
+        margin-top: 0px; 
+        border: 3px solid black;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .projectpage > .pimage{
+        width: 100%;
+        margin-top: 0px; 
+        border: 3px solid black;
+    }
 }
 
 .projectpage > h4{
